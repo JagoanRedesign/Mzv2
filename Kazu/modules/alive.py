@@ -46,7 +46,7 @@ async def alive(client: Client, message: Message):
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
     uptime = await get_readable_time((time.time() - StartTime))
     man = (
-        f"**༺ [𝙿𝚈𝚁𝙾𝚉𝚄-𝚄𝚂𝙴𝚁𝙱𝙾𝚃](https://github.com/ionmusic/PyroZu-Userbot) ༻**\n\n"
+        f"**༺ [𝙼𝚉 𝚄𝚂𝙴𝚁𝙱𝙾𝚃] ༻**\n\n"
         f"<b>{alive_text}</b>\n\n"
         f"{emoji} <b>Mᴀsᴛᴇʀ :</b> {client.me.mention} \n"
         f"{emoji} <b>Mᴏᴅᴜʟᴇs :</b> <code>{len(modules)} Modules</code> \n"
