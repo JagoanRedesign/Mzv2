@@ -1,6 +1,6 @@
 {
-  "name": "PyroZu-Userbot",
-  "description": "[PyroZu-Userbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.  Powered by PyroZu-Userbot.",
+  "name": "Mz Userbot",
+  "description": "[MzUserbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.",
   "stack": "heroku-22",
   "env": {
     "API_ID": {
