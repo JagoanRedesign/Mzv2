@@ -25,11 +25,11 @@ DEF_UNAPPROVED_MSG = (
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
     "         ✨ 𝙹𝙰𝙽𝙶𝙰𝙽 𝚂𝙿𝙰𝙼 𝚈𝙰 𝙳𝙴𝙺 ✨\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n"
-    "• Saya belum menyetujui anda untuk PM.\n"
-    "• Tunggu sampai saya menyetujui PM anda.\n"
-    "• Jangan Spam Chat atau anda akan otomatis diblokir.\n"
+    "• Saya belum menyetujui pesan kamu.\n"
+    "• Tunggu sampai pesan kamu disetujui.\n"
+    "• Jangan Spam Chat atau kamu akan otomatis diblokir.\n"
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "       𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𝙱𝚈 : 𝙿𝚈𝚁𝙾𝚉𝚄\n"
+    "      ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n"
 )
 
