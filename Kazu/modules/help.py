@@ -57,7 +57,7 @@ async def module_help(client: Client, message: Message):
             commands: dict = CMD_HELP[help_arg]
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
-                this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
+                this_command += f"  •  **Perintah:** `.{str(x)}`\n  •  **Fungsi:** `{str(commands[x])}`\n\n"
             this_command += "ᴍᴢ ꭙ ᴀssɪsᴛᴀɴᴛ"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
@@ -88,7 +88,7 @@ async def module_helper(client: Client, message: Message):
             message, f"```{str(ac)}```\n• ᴍᴢ ꭙ ᴀssɪsᴛᴀɴᴛ •"
         )
         await message.reply(
-            f"**Usage**:`.help broadcast` **To View Module details**"
+            f"**Usage**:`.help broadcast` **Untuk Melihat detail Modul**"
         )
 
     if help_arg:
@@ -96,7 +96,7 @@ async def module_helper(client: Client, message: Message):
             commands: dict = CMD_HELP[help_arg]
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
-                this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
+                this_command += f"  •  **Perintah:** `.{str(x)}`\n  •  **Fungsi:** `{str(commands[x])}`\n\n"
             this_command += "ᴍᴢ ꭙ ᴀssɪsᴛᴀɴᴛ"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
