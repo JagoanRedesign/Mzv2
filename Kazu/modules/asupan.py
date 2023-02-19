@@ -98,9 +98,14 @@ add_command_help(
             f"asupan atau {cmd}ptl",
             "Untuk Mengirim video asupan secara random.",
         ],
-         [f"{cmd}ayang", "Mencari Foto ayang kamu /nNote: Modul ini buat cwo yang jomblo."],
-        [f"{cmd}ppcp", "Mencari Foto PP Couple Random."],
-        [f"{cmd}bokep", "to send random porno videos."]
+        [
+            f"asupan atau {cmd}ptl",
+            "Untuk Mengirim video asupan secara random.",
+        ],
+        
+         [f"ayang", "Mencari Foto ayang kamu."],
+        [f"ppcp", "Mencari Foto PP Couple Random."],
+        [f"bokep", "to send random porno videos."]
        
     ],
 )
