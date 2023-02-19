@@ -41,12 +41,12 @@ async def del_msg(client: Client, message: Message):
 )
 @Client.on_message(filters.command("purge", cmd) & filters.me)
 async def purge(client: Client, message: Message):
-    Kazu = await edit_or_reply(message, "`Starting To Purge Messages!`")
+    Kazu = await edit_or_reply(message, "`Mulai Membersihkan Pesan!`")
     msg = message.reply_to_message
     if msg:
         itermsg = list(range(msg.id, message.id))
     else:
-        await Kazu.edit("`Reply To Message To Purge!`")
+        await Kazu.edit("`Balas Pesan Untuk Pembersihan!`")
         return
     count = 0
 
