@@ -50,12 +50,12 @@ async def stats(client: Client, message: Message):
     end = datetime.now()
     ms = (end - start).seconds
     await Man.edit_text(
-        """`Your Stats Obtained in {} seconds`
-`You have {} Private Messages.`
-`You are in {} Groups.`
-`You are in {} Super Groups.`
-`You Are in {} Channels.`
-`You Are Admin in {} Chats.`
+        """`Status akun anda, berhasil diambil dalam {} detik`
+` {} Pesan Pribadi.`
+`berada di {} Groups.`
+`berada {} Super Groups.`
+`berada {} Channels.`
+`menjadi admin di {} Chats.`
 `Bots = {}`""".format(
             ms, u, g, sg, c, a_chat, b
         )
@@ -65,6 +65,6 @@ async def stats(client: Client, message: Message):
 add_command_help(
     "stats",
     [
-        ["stats", "To Check Your Account Status, how Joined Chats."],
+        ["stats", "Mengambil info akun anda."],
     ],
 )
