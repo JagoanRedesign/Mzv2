@@ -8,15 +8,17 @@
 #
 # kopas repo dan hapus credit, ga akan jadikan lu seorang developer
 # ©2023 Geez | Ram Team
-import os
 import asyncio
-import time
-from pyrogram import Client, filters, enums
-from pyrogram.types import Message
-import logging
-from Kazu.helpers.basic import edit_or_reply
-from .help import add_command_help
+
+from pyrogram import *
+from pyrogram import filters
+from pyrogram.types import *
+
 from config import CMD_HANDLER as cmd
+from Kazu.helpers.basic import edit_or_reply
+from Kazu.utils import extract_user
+
+from .help import add_command_help
 
 @Client.on_message(filters.command("toanime", cmd) & filters.me)
 async def convert_image(client: Client, message: Message):
@@ -30,11 +32,12 @@ async def convert_image(client: Client, message: Message):
     bot = "qq_2d_ai_bot"
     await client.send_photo(bot, photo=photo)
     await asyncio.sleep(18)
-    async for result in client.search_messages(bot, limit=1):
+    
+    async for result in client.search_messages(bot, query="Name", limit=1):
         if result.photo:
             await message.edit("uploading...")
             converted_image_file = await client.download_media(result)
-            await client.send_photo(message.chat.id, converted_image_file, caption="Powered by Geez Pyro")
+            await client.send_photo(message.chat.id, converted_image_file, caption="ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴢ ꭙ ʙᴏᴛ")
             await message.delete()
             os.remove(converted_image_file)
         else:
