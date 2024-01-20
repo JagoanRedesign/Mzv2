@@ -68,9 +68,7 @@ async def nearest_dc(client: Client, message: Message):
     )
 
 
-@Client.on_message(
-    filters.command("cping", ["."]) & filters.user(DEVS) & ~filters.me
-)
+
 @Client.on_message(filters.command("ping", cmd) & filters.me)
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
@@ -81,30 +79,27 @@ async def pingme(client: Client, message: Message):
         f"❏ **𝙼𝚉 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✨**\n"
         f"├• **Pɪɴɢᴇʀ** - `%sms`\n"
         f"├• **Uᴘᴛɪᴍᴇ -** `{uptime}` \n"
-        f"└• **Oᴡɴᴇʀ :** {client.me.mention}" % (duration)
+        f"└• **User :** {client.me.mention}" % (duration)
     )
 
 
 @Client.on_message(
-    filters.command("ceping", ["."]) & filters.user(DEVS) & ~filters.me
+    filters.command("cek", [".", ""]) & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command("kping", cmd) & filters.me)
+@Client.on_message(filters.command("ping", cmd) & filters.me)
 async def kping(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await edit_or_reply(message, "⚡⚡⚡⚡")
-    await xx.edit("⚡")
-    await xx.edit("⚡⚡")
-    await xx.edit("⚡⚡⚡")
-    await xx.edit("⚡⚡⚡⚡✨")
-    await xx.edit("Awas awas awas babunya Mz mau lewat😎")
+    xx = await edit_or_reply(message, 
+     f"█▀█ █▀█ █▄░█ █▀▀ █ \n"
+     f"█▀▀ █▄█ █░▀█ █▄█ ▄"
+   )
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
-        f"❏ **PONG!!🏓**\n"
-        f"├• **Pinger** - `%sms`\n"
-        f"├• **Uptime -** `{uptime}` \n"
-        f"└• **Owner :** {client.me.mention}" % (duration)
-    )
+           f"➠**Ping !! -** `%sms`\n"
+           f"➠**Uptime -** `{uptime}` \n"
+           f"➠**User -**  {client.me.mention}" " % (duration)
+           )
 
 
