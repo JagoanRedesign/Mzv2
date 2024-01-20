@@ -69,7 +69,7 @@ async def nearest_dc(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command("ping", cmd) & filters.me)
+@Client.on_message(filters.command("cek", cmd) & filters.me)
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
@@ -84,7 +84,7 @@ async def pingme(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command("cek", [".", ""]) & filters.user(DEVS) & ~filters.me
+    filters.command("ping", [".", ""]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command("ping", cmd) & filters.me)
 async def kping(client: Client, message: Message):
