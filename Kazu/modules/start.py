@@ -11,6 +11,7 @@ from datetime import datetime
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
+import random
 
 from config import CMD_HANDLER as cmd
 from config import *
@@ -25,7 +26,7 @@ absen = [
     "**Hadir bang** 😁",
     "**Hadir kak** 😉",
     "**Hadir dong** 😁",
-    "**Hadir ganteng** 🥵",
+    "**Hadir bos** 🥵",
     "**Hadir bro** 😎",
     "**Hadir kak maap telat** 🥺",
 ]
@@ -33,19 +34,7 @@ absen = [
 
 @Client.on_message(filters.command("absen", ["."]) & filters.user(DEVS) & ~filters.me)
 async def absen(_, message: Message):
-    await message.reply("**Saya Hadir Tuan Kazu**")
-
-
-@Client.on_message(filters.command("repo", cmd) & filters.me)
-async def repo(client: Client, message: Message):
-    await edit_or_reply(
-        message, First.REPO.format(BOT_VER), disable_web_page_preview=True
-    )
-
-
-@Client.on_message(filters.command("creator", cmd) & filters.me)
-async def creator(client: Client, message: Message):
-    await edit_or_reply(message, First.CREATOR)
+    await message.reply(random.choice(absen))
 
 
 @Client.on_message(filters.command(["uptime", "up"], cmd) & filters.me)
@@ -53,7 +42,7 @@ async def uptime(client: Client, message: Message):
     now = datetime.now()
     current_uptime = now - START_TIME
     await edit_or_reply(
-        message, f"Current Uptime\n" f"```{str(current_uptime).split('.')[0]}```"
+        message, f"Waktu Aktif\n" f"```{str(current_uptime).split('.')[0]}```"
     )
 
 
@@ -124,26 +113,26 @@ async def get_id(client: Client, message: Message):
 
     if user_id:
         if rep.forward_from:
-            user_detail = f"👀 **Forwarded User ID:** `{message.reply_to_message.forward_from.id}`\n"
+            user_detail = f"**Forwarded User ID:** `{message.reply_to_message.forward_from.id}`\n"
         else:
             user_detail = (
                 f"🙋‍♂️ **From User ID:** `{message.reply_to_message.from_user.id}`\n"
             )
-        user_detail += f"💬 **Message ID:** `{message.reply_to_message.id}`"
+        user_detail += f"**Message ID:** `{message.reply_to_message.id}`"
         await message.edit(user_detail)
     elif file_id:
         if rep.forward_from:
-            user_detail = f"👀 **Forwarded User ID:** `{message.reply_to_message.forward_from.id}`\n"
+            user_detail = f"**Forwarded User ID:** `{message.reply_to_message.forward_from.id}`\n"
         else:
             user_detail = (
                 f"🙋‍♂️ **From User ID:** `{message.reply_to_message.from_user.id}`\n"
             )
-        user_detail += f"💬 **Message ID:** `{message.reply_to_message.id}`\n\n"
+        user_detail += f"**Message ID:** `{message.reply_to_message.id}`\n\n"
         user_detail += file_id
         await edit_or_reply(message, user_detail)
 
     else:
-        await edit_or_reply(message, f"👥 **Chat ID:** `{message.chat.id}`")
+        await edit_or_reply(message, f"**Chat ID:** `{message.chat.id}`")
 
 
 # Command help section
@@ -151,8 +140,6 @@ add_command_help(
     "start",
     [
         ["alive", "Check if the bot is alive or not."],
-        ["repo", "Display the repo of this userbot."],
-        ["creator", "Show the creator of this userbot."],
         ["id", "Send id of what you replied to."],
         [f"up `or` {cmd}uptime", "Check bot's current uptime."],
     ],
