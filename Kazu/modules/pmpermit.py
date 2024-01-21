@@ -45,7 +45,7 @@ async def incomingpm(client: Client, message: Message):
         
         DEF_UNAPPROVED_MSG = (
            f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
-           f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Mz balesin yak !!!\n\n"
+           f"👋🏻 Hi {message.from_user.first_name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Mz balesin yak !!!\n\n"
            f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
         )
         if getmsg is not None:
@@ -294,7 +294,7 @@ async def get_pmermit(client: Client, cust_msg: Message):
         )
         DEF_UNAPPROVED_MSG = (
     f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
-    f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Mz balesin yak !!!\n\n"
+    f"👋🏻 Hi {message.from_user.first_name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Mz balesin yak !!!\n\n"
     f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
         )
     try:
