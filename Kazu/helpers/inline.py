@@ -25,6 +25,7 @@ def paginate_help(page_number, loaded_modules, prefix):
             text="{}".format(x),
             callback_data=f"ub_modul_{x}",
         )
+        
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -43,9 +44,9 @@ def paginate_help(page_number, loaded_modules, prefix):
                 InlineKeyboardButton(
                     text="⋗", callback_data=f"{prefix}_next({modulo_page})"
                 ),
+            ), ( InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close_help")
             )
-        ], [( InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close_help")
-            )]
+        ]
     return pairs
 
 
