@@ -22,15 +22,10 @@ from Kazu.helpers.tools import get_arg
 from .help import add_command_help
 
 DEF_UNAPPROVED_MSG = (
-    "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "         ✨ 𝙹𝙰𝙽𝙶𝙰𝙽 𝚂𝙿𝙰𝙼 𝚈𝙰 𝙳𝙴𝙺 ✨\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n"
-    "• Saya belum menyetujui pesan kamu.\n"
-    "• Tunggu sampai pesan kamu disetujui.\n"
-    "• Jangan Spam Chat atau kamu akan otomatis diblokir.\n"
-    "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "      ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n"
+    "ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ\n\n"
+    "👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
+    
+      "You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
 )
 
 
@@ -105,7 +100,7 @@ async def auto_accept(client, message):
             approve(message.chat.id)
             await client.send_message(
                 message.chat.id,
-                f"<b>Menerima Pesan!!!</b>\n{message.from_user.mention} <b>Terdeteksi Developer PyroZu-Userbot</b>",
+                f"<b>Menerima Pesan!!!</b>\n{message.from_user.mention} <b>Terdeteksi Developer Duta Bot</b>",
                 parse_mode=enums.ParseMode.HTML,
             )
         except IntegrityError:
@@ -139,7 +134,7 @@ async def auto_accept(client, message):
 
 
 @Client.on_message(
-    filters.command(["ok", "setuju", "approve"], cmd) & filters.me & filters.private
+    filters.command(["ok", "setuju", "yes"], cmd) & filters.me & filters.private
 )
 async def approvepm(client: Client, message: Message):
     try:
@@ -178,7 +173,7 @@ async def approvepm(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["tolak", "nopm", "disapprove"], cmd) & filters.me & filters.private
+    filters.command(["tolak", "no", "disapprove"], cmd) & filters.me & filters.private
 )
 async def disapprovepm(client: Client, message: Message):
     try:
