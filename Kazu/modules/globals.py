@@ -55,7 +55,7 @@ async def gban_user(client: Client, message: Message):
         return await Kazu.edit("**Gak Bisa Di Gban Kontol karena dia Yang Buat Aku 🗿**")
     if user_id in WHITELIST:
         return await Kazu.edit(
-            "**Kau Gak Bisa Kontol Gban Dia Karena Dia Adalah admin @Karc0de 😡**"
+            "**Kau Gak Bisa  Gban Dia Karena Dia admin @Dutabot 😡**"
         )
     if user_id:
         try:
@@ -80,9 +80,9 @@ async def gban_user(client: Client, message: Message):
             er += 1
     sql.gban(user.id)
     msg = (
-        r"**\\#GBanned_User//**"
-        f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
-        f"\n**User ID:** `{user.id}`"
+          r"**💢  ʙᴀɴ ᴇᴠᴇɴᴛ"
+          f"\n**•  ʙᴀɴɴᴇᴅ ʙʏ: ** {client.me.mention}"
+          f"\n**• ᴜsᴇʀ:** [{user.first_name}](tg://user?id={user.id})"
     )
     if reason:
         msg += f"\n**Reason:** `{reason}`"
@@ -124,7 +124,7 @@ async def ungban_user(client: Client, message: Message):
                 er += 1
         sql.ungban(user.id)
         msg = (
-            r"**\\#UnGbanned_User//**"
+            r"**💢 Unbanned User**"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
             f"\n**User ID:** `{user.id}`"
         )
