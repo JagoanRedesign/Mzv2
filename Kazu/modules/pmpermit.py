@@ -42,6 +42,8 @@ async def incomingpm(client: Client, message: Message):
     if message.chat.id != 777000:
         PM_LIMIT = gvarstatus("PM_LIMIT") or 5
         getmsg = gvarstatus("unapproved_msg")
+    if 'PM_COUNT' not in locals():
+        PM_COUNT = 0
         
         DEF_UNAPPROVED_MSG = (
            f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
