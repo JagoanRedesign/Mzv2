@@ -40,12 +40,12 @@ def paginate_help(page_number, loaded_modules, prefix):
                 InlineKeyboardButton(
                     text="⋖", callback_data=f"{prefix}_prev({modulo_page})"
                 ),
-                InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close_help"),
                 InlineKeyboardButton(
                     text="⋗", callback_data=f"{prefix}_next({modulo_page})"
                 ),
             )
-        ]
+        ], [( InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close_help")
+            )]
     return pairs
 
 
@@ -54,7 +54,7 @@ def cb_wrapper(func):
         users = list_users
         if cb.from_user.id not in users:
             await cb.answer(
-                "Tidak Semudah Itu Ferguso Yahahaha",
+                "Userbot by @DutabotID",
                 cache_time=0,
                 show_alert=True,
             )
