@@ -21,12 +21,11 @@ from Kazu.helpers.tools import get_arg
 
 from .help import add_command_help
 
-DEF_UNAPPROVED_MSG = (
-    f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
-    "👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
-    
-      "You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
-)
+
+DEF_UNAPPROVED_MSG =  f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
+    f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
+    f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
+
 
 
 @Client.on_message(
