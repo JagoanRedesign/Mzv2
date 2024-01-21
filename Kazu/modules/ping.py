@@ -99,7 +99,7 @@ async def kping(client: Client, message: Message):
     await xx.edit(
            f"➠**Ping !! -** `%sms`\n"
            f"➠**Uptime -** `{uptime}` \n"
-           f"➠**User -**  {client.me.mention}" " % (duration)
+           f"➠**User -**  {client.me.mention}" % (duration)
            )
 
 
