@@ -22,9 +22,6 @@ from Kazu.helpers.tools import get_arg
 from .help import add_command_help
 
 
-DEF_UNAPPROVED_MSG =  f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
-    f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
-    f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
 
 
 
@@ -45,6 +42,12 @@ async def incomingpm(client: Client, message: Message):
     if message.chat.id != 777000:
         PM_LIMIT = gvarstatus("PM_LIMIT") or 5
         getmsg = gvarstatus("unapproved_msg")
+        
+      DEF_UNAPPROVED_MSG = (
+    f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
+    f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
+    f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
+)
         if getmsg is not None:
             UNAPPROVED_MSG = getmsg
         else:
@@ -289,6 +292,11 @@ async def get_pmermit(client: Client, cust_msg: Message):
         return await cust_msg.edit(
             "**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
+        DEF_UNAPPROVED_MSG = (
+    f"**ᴘᴇꜱᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ʙʏ : ᴍᴢ ꭙ ʙᴏᴛ**\n\n"
+    f"👋🏻 Hi {message.from_user.name}​​ Jangan spam ya nanti kalo spam sampai 3x kamu bakal ke ban, tunggu Rexa balesin yak !!!\n\n"
+    f"You have {PM_COUNT}/{PM_LIMIT} warnings!\n"
+        )
     try:
         import Kazu.helpers.SQL.globals as sql
     except AttributeError:
@@ -299,6 +307,7 @@ async def get_pmermit(client: Client, cust_msg: Message):
     if custom_message is not None:
         await Kazu.edit("**Pesan PMPERMIT Yang Sekarang:**" f"\n\n{custom_message}")
     else:
+   
         await Kazu.edit(
             "**Anda Belum Menyetel Pesan Costum PMPERMIT,**\n"
             f"**Masih Menggunakan Pesan PM Default:**\n\n{DEF_UNAPPROVED_MSG}"
