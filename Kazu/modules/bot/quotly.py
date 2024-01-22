@@ -18,7 +18,7 @@ async def quotly(client: Client, message: Message):
         return await message.reply_text("**Mohon Balas ke Pesan**")
     bot = "QuotLyBot"
     if message.reply_to_message:
-        await message.edit("`Making a Quote . . .`")
+        await message.reply_text("`Making a Quote . . .`")
         await client.unblock_user(bot)
         if args:
             await client.send_message(bot, f"/qcolor {args}")
