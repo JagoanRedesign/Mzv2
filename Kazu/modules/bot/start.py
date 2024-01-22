@@ -11,10 +11,6 @@ async def start(client, message):
    await message.reply_text("Mz Userbot Telah Aktif")
 
 
-@app.on_message(filters.command("tes") & filters.private)
-async def tes(client, message):
-   await message.reply_text("ini tes")
-
 
 @app.on_message(filters.command("help") & filters.private)
 async def start(client, message):
