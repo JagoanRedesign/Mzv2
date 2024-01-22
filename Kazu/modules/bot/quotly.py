@@ -15,7 +15,7 @@ from Kazu import app
 async def quotly(client: Client, message: Message):
     args = get_arg(message)
     if not message.reply_to_message and not args:
-        return await message.edit("**Mohon Balas ke Pesan**")
+        return await message.reply_text("**Mohon Balas ke Pesan**")
     bot = "QuotLyBot"
     if message.reply_to_message:
         await message.edit("`Making a Quote . . .`")
