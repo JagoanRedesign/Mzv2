@@ -84,7 +84,7 @@ async def yt_vid(client: Client, message: Message):
     time.time()
     file_path = f"{ytdl_data['id']}.mp4"
     capy = f"**Video Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
-    await message.send_video(
+    await app.send_video(
         message.chat.id,
         video=open(file_path, "rb"),
         duration=int(ytdl_data["duration"]),
@@ -148,7 +148,7 @@ async def song(client: Client, message: Message):
     time.time()
     file_sung = f"{ytdl_data['id']}.mp3"
     capy = f"**Song Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
-    await message.send_audio(
+    await app.send_audio(
         message.chat.id,
         audio=open(file_sung, "rb"),
         title=str(ytdl_data["title"]),
