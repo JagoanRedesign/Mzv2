@@ -103,3 +103,17 @@ async def kping(client: Client, message: Message):
            )
 
 
+
+def send_message_at_specific_time(client, chat_id, text, hour, minute):
+    while True:
+        now = datetime.now()
+        if now.hour == hour and now.minute == minute:
+            client.send_message(chat_id, text)
+            break
+        time.sleep(10)  
+
+
+with app:
+    chat_id = "-1001651683956"  # Ganti dengan ID obrolan tujuan Anda
+    message = "Pesan Anda"
+    send_message_at_specific_time(app, chat_id, message, 04, 20) 
